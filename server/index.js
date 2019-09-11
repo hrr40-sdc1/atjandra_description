@@ -29,6 +29,18 @@ app.get('/houses/:id', (req, res, next) => {
   });
 });
 
+app.post('/houses/:id', (req, res, next) => {
+
+});
+
+app.put('/houses/:id', (req, res, next) => {
+
+});
+
+app.delete('/houses/:id', (req, res, next) => {
+
+});
+
 app.get('/photos/houses/:id', (req, res, next) => {
   var houseId = req.params.id;
 
@@ -40,6 +52,18 @@ app.get('/photos/houses/:id', (req, res, next) => {
       res.status(200).json(photos);
     }
   });
+});
+
+app.post('/photos/houses/:id', (req, res, next) => {
+
+});
+
+app.put('/photos/houses/:id', (req, res, next) => {
+
+});
+
+app.delete('/photos/houses/:id', (req, res, next) => {
+
 });
 
 app.get('/houses/search/:qry', (req, res, next) => {
