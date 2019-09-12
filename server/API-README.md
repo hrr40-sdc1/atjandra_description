@@ -2,7 +2,7 @@
 
 ## Houses Database
 
-1. GET
+#### GET  
 Route: http://localhost:3010/houses/101
 
 Example Response:
@@ -56,9 +56,9 @@ Example Response:
 }
 ```
 
-2. POST
-Route: http://localhost:3010/houses/
-Content-Type: application/json
+#### POST  
+Route: http://localhost:3010/houses/  
+Content-Type: application/json  
 Data:
 ```sh
 {
@@ -112,9 +112,9 @@ Example Response:
 }
 ```
 
-3. PUT
-Route: http://localhost:3010/houses/101
-Content-Type: application/json
+#### PUT  
+Route: http://localhost:3010/houses/101  
+Content-Type: application/json  
 Data:
 ```sh
 {
@@ -130,7 +130,7 @@ Example Response:
 }
 ```
 
-4. DELETE
+#### DELETE  
 Route: http://localhost:3010/houses/101
 
 Example Response:
@@ -143,7 +143,7 @@ Example Response:
 
 ## Photos Database
 
-1. GET
+#### GET  
 Route: http://localhost:3010/photos/houses/2
 
 Example Response:
@@ -184,9 +184,9 @@ Example Response:
 ]
 ```
 
-2. POST
-Route: http://localhost:3010/photos/houses/
-Content-Type: application/json
+#### POST  
+Route: http://localhost:3010/photos/houses/  
+Content-Type: application/json  
 Data:
 ```sh
 {
@@ -206,9 +206,9 @@ Example Response:
 }
 ```
 
-3. PUT
-Route: http://localhost:3010/photos/houses/701
-Content-Type: application/json
+#### PUT  
+Route: http://localhost:3010/photos/houses/701  
+Content-Type: application/json  
 Data:
 ```sh
 {
@@ -224,7 +224,7 @@ Example Response:
 }
 ```
 
-4. DELETE
+#### DELETE  
 Route: http://localhost:3010/photos/houses/701
 
 Example Response:
