@@ -51,7 +51,7 @@ app.put('/houses/:id', (req, res, next) => {
   House.update({ house_id: houseId }, req.body, (err) => {
     if (err) {
       console.log('error updating this house', err);
-      res.status(500).json({ success: false, message: 'Could not create this house' });
+      res.status(500).json({ success: false, message: 'Could not update this house' });
     } else {
       res.status(200).json({ success: true, message: 'Item Updated' });
     }
@@ -84,16 +84,41 @@ app.get('/photos/houses/:id', (req, res, next) => {
   });
 });
 
-app.post('/photos/houses/:id', (req, res, next) => {
-
+app.post('/photos/houses/', (req, res, next) => {
+  Photo.create(req.body, (err, photo) => {
+    if (err) {
+      console.log('error creating photo object', err);
+      res.status(500).json({ success: false, message: 'Could not create photo object' });
+    } else {
+      res.status(201).json({ success: true, message: 'Photo Created', id: photo.id });
+    }
+  });
 });
 
 app.put('/photos/houses/:id', (req, res, next) => {
+  var photoId = req.params.id;
 
+  Photo.update({ photo_id: photoId }, req.body, (err) => {
+    if (err) {
+      console.log('error updating this photo', err);
+      res.status(500).json({ success: false, message: 'Could not update this photo' });
+    } else {
+      res.status(200).json({ success: true, message: 'Photo Updated' });
+    }
+  });
 });
 
 app.delete('/photos/houses/:id', (req, res, next) => {
+  var photoId = req.params.id;
 
+  Photo.deleteOne({ photo_id: photoId }, function (err) {
+    if (err) {
+      console.log('error deleting this house', err);
+      res.status(500).json({ success: false, message: 'Could not delete this photo' });
+    } else {
+      res.status(200).json({ success: true, message: 'Photo Deleted' });
+    }
+  });
 });
 
 app.get('/houses/search/:qry', (req, res, next) => {
