@@ -6,6 +6,7 @@
 Route: http://localhost:3010/houses/101
 
 Example Response:
+```sh
 {
     "private_room": {
         "guest": 1,
@@ -53,11 +54,13 @@ Example Response:
     "photos": [],
     "id": "5d798e358da2e7077ff23726"
 }
+```
 
-1. POST
+2. POST
 Route: http://localhost:3010/houses/
 Content-Type: application/json
 Data:
+```sh
 {
   "house_id":101,
   "title":"Dui Nec Urna Suscipit Nonummy. Fusce Fermentum Fermentum",
@@ -98,36 +101,45 @@ Data:
     "2019-9-5"
   ]
 }
+```
 
 Example Response:
+```sh
 {
     "success": true,
     "message": "Item Created",
     "id": "5d798d918da2e7077ff23713"
 }
+```
 
-1. PUT
+3. PUT
 Route: http://localhost:3010/houses/101
 Content-Type: application/json
 Data:
+```sh
 {
 	"location": "Lake Janiehaven"
 }
+```
 
 Example Response:
+```sh
 {
     "success": true,
     "message": "Item Updated"
 }
+```
 
-1. DELETE
+4. DELETE
 Route: http://localhost:3010/houses/101
 
 Example Response:
+```sh
 {
     "success": true,
     "message": "Item Deleted"
 }
+```
 
 ## Photos Database
 
@@ -135,6 +147,7 @@ Example Response:
 Route: http://localhost:3010/photos/houses/2
 
 Example Response:
+```sh
 [
     {
         "_id": "5d797ec7f03f9e0693b8e0a5",
@@ -169,44 +182,55 @@ Example Response:
         "__v": 0
     }
 ]
+```
 
-1. POST
+2. POST
 Route: http://localhost:3010/photos/houses/
 Content-Type: application/json
 Data:
+```sh
 {
     "photo_id":701,
     "house_id":2,
     "file_path":"house-photo-21.jpg",
     "desc":"senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer mollis. Integer"
 }
+```
 
 Example Response:
+```sh
 {
     "success": true,
     "message": "Item Created",
     "id": "5d79989346b36608b0339385"
 }
+```
 
-1. PUT
+3. PUT
 Route: http://localhost:3010/photos/houses/701
 Content-Type: application/json
 Data:
+```sh
 {
     "file_path":"house-photo-10.jpg"
 }
+```
 
 Example Response:
+```sh
 {
     "success": true,
     "message": "Photo Updated"
 }
+```
 
-1. DELETE
+4. DELETE
 Route: http://localhost:3010/photos/houses/701
 
 Example Response:
+```sh
 {
     "success": true,
     "message": "Photo Deleted"
 }
+```
