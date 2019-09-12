@@ -1,4 +1,5 @@
 const express = require('express');
+var bodyParser = require('body-parser')
 require('dotenv').config();
 var cors = require('./cors');
 
@@ -9,6 +10,10 @@ const app = express();
 
 // Middlewares
 app.use(cors);
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+// parse application/json
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.static(__dirname + '/../client/dist'));
 // serve static image files in public if necessary
@@ -29,16 +34,41 @@ app.get('/houses/:id', (req, res, next) => {
   });
 });
 
-app.post('/houses/:id', (req, res, next) => {
-
+app.post('/houses/', (req, res, next) => {
+  House.create(req.body, (err, house) => {
+    if (err) {
+      console.log('error creating this house', err);
+      res.status(500).json({ success: false, message: 'Could not create this house' });
+    } else {
+      res.status(201).json({ success: true, message: 'Item Created', id: house.id });
+    }
+  });
 });
 
 app.put('/houses/:id', (req, res, next) => {
+  var houseId = req.params.id;
 
+  House.update({ house_id: houseId }, req.body, (err) => {
+    if (err) {
+      console.log('error updating this house', err);
+      res.status(500).json({ success: false, message: 'Could not create this house' });
+    } else {
+      res.status(200).json({ success: true, message: 'Item Updated' });
+    }
+  });
 });
 
 app.delete('/houses/:id', (req, res, next) => {
+  var houseId = req.params.id;
 
+  House.deleteOne({ house_id: houseId }, function (err) {
+    if (err) {
+      console.log('error deleting this house', err);
+      res.status(500).json({ success: false, message: 'Could not delete this house' });
+    } else {
+      res.status(200).json({ success: true, message: 'Item Deleted' });
+    }
+  });
 });
 
 app.get('/photos/houses/:id', (req, res, next) => {
