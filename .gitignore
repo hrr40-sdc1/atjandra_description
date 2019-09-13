@@ -37,3 +37,6 @@ __snapshots__
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# CSV Files from Data Generator
+database/DataGenerator/data
