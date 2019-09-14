@@ -1,0 +1,23 @@
+COPY amenities(id,house_id,amenity_id)
+FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/amenities.csv' DELIMITER ',' CSV HEADER;
+
+COPY amenity_list(id,category,item,"desc")
+FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/amenityList.csv' DELIMITER ',' CSV HEADER;
+
+COPY bedrooms(id,private_room_id)
+FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/bedrooms.csv' DELIMITER ',' CSV HEADER;
+
+COPY beds(id,bedrooms_id,size)
+FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/beds.csv' DELIMITER ',' CSV HEADER;
+
+COPY bedsize(id,size)
+FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/bedSize.csv' DELIMITER ',' CSV HEADER;
+
+COPY houses(house_id,title,"location",is_entire_place,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc)
+FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses.csv' DELIMITER ',' CSV HEADER;
+
+COPY photos(photo_id,house_id,file_path,"desc")
+FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/photos.csv' DELIMITER ',' CSV HEADER;
+
+COPY private_room(id,house_id,guests,bath)
+FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/privateRoom.csv' DELIMITER ',' CSV HEADER;

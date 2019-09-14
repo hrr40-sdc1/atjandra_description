@@ -8,7 +8,7 @@ const numOfRecords = 10000000;
 const generateHouseData = (filepath, length) => {
   return new Promise((resolve, reject) => {
     const writeStream = fs.createWriteStream(filepath, { encoding: 'utf8' });
-    writeStream.write('house_id,title,location,is_entire_place,super_host_name,super_host_photo,rating,desc,space_desc\n');
+    writeStream.write('house_id,title,location,is_entire_place,super_host_name,super_host_photo,rating,desc,space_desc,guest_desc,other_desc\n');
 
     (async() => {
       for (let i = 1; i <= length; i++) {
@@ -19,10 +19,12 @@ const generateHouseData = (filepath, length) => {
         const super_host_name = `${faker.name.firstName()} ${faker.name.lastName()}`;
         const super_host_photo = 'super-host-photo-1.jpg';
         const rating = faker.random.number(100);
-        const desc = faker.lorem.sentences(3);
-        const space_desc = faker.lorem.sentences(10);
+        const desc = faker.lorem.sentences(2);
+        const space_desc = faker.lorem.sentences(5);
+        const guest_desc = faker.lorem.sentences(1);
+        const other_desc = faker.lorem.sentences(2);
 
-        if(!writeStream.write(`${house_id},${title},${location},${is_entire_place},${super_host_name},${super_host_photo},${rating},${desc},${space_desc}`)) {
+        if(!writeStream.write(`${house_id},${title},${location},${is_entire_place},${super_host_name},${super_host_photo},${rating},${desc},${space_desc},${guest_desc},${other_desc}`)) {
           await new Promise(resolve => writeStream.once('drain', resolve));
         }
         if (i !== length) {
@@ -39,20 +41,22 @@ const generatePhotoData = (filepath, length) => {
   return new Promise((resolve, reject) => {
 
     const writeStream = fs.createWriteStream(filepath, { encoding: 'utf8' });
-    writeStream.write('house_id,file_path,desc\n');
-
+    writeStream.write('photo_id,house_id,file_path,desc\n');
+    let id = 1;
     (async() => {
       for (let i = 1; i <= length; i++) {
         const numOfPictures = faker.random.number({min: 1, max:3});
         for (let j = 0; j <= numOfPictures; j++) {
+          const photo_id = id;
           const house_id = i;
           const file_path = `HousePic${faker.random.number({min: 1, max: 910})}.jpg`;
           const desc = faker.lorem.sentences(2);
 
-          if(!writeStream.write(`${house_id},${file_path},${desc}`)) {
+          if(!writeStream.write(`${photo_id},${house_id},${file_path},${desc}`)) {
             await new Promise(resolve => writeStream.once('drain', resolve));
           }
           if (i !== length || j !== numOfPictures) {
+            id++;
             writeStream.write('\n');
           }
         }
@@ -89,8 +93,8 @@ const generateAmenities = (filepath, length) => {
   return new Promise((resolve, reject) => {
 
     const writeStream = fs.createWriteStream(filepath, { encoding: 'utf8' });
-    writeStream.write('house_id,amenity_id\n');
-
+    writeStream.write('id, house_id,amenity_id\n');
+    let id = 1;
     (async() => {
       for (let i = 1; i <= length; i++) {
         const numOfAmenties = faker.random.number({min: 1, max:6});
@@ -98,10 +102,11 @@ const generateAmenities = (filepath, length) => {
           const house_id = i;
           const amenity_id = faker.random.number({ min: 1, max: amenityList.length });
 
-          if(!writeStream.write(`${house_id},${amenity_id}`)) {
+          if(!writeStream.write(`${id},${house_id},${amenity_id}`)) {
             await new Promise(resolve => writeStream.once('drain', resolve));
           }
           if (i !== length || j !== numOfAmenties) {
+            id++;
             writeStream.write('\n');
           }
         }
@@ -189,8 +194,8 @@ const generateBeds = (filepath, length) => {
   return new Promise((resolve, reject) => {
 
     const writeStream = fs.createWriteStream(filepath, { encoding: 'utf8' });
-    writeStream.write('bedrooms_id,size\n');
-
+    writeStream.write('id,bedrooms_id,size\n');
+    let id = 1;
     (async() => {
       for (let i = 1; i <= length; i++) {
         const numOfBeds = faker.random.number({min: 1, max:3});
@@ -198,10 +203,11 @@ const generateBeds = (filepath, length) => {
           const bedrooms_id = i;
           const size = faker.random.number({min: 1, max:3});
 
-          if(!writeStream.write(`${bedrooms_id},${size}`)) {
+          if(!writeStream.write(`${id},${bedrooms_id},${size}`)) {
             await new Promise(resolve => writeStream.once('drain', resolve));
           }
           if (i !== length || j !== numOfBeds) {
+            id++
             writeStream.write('\n');
           }
         }
