@@ -1,0 +1,40 @@
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql.csv' WITH DELIMITER='|' AND HEADER=TRUE;
+
+-------
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql1.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=200 AND NUMPROCESSES=16;
+
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql2.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=300 AND NUMPROCESSES=12 AND PREPAREDSTATEMENTS=True;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql3.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=16 AND PREPAREDSTATEMENTS=True;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql4.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=16 AND PREPAREDSTATEMENTS=True;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql5.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql6.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql7.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql8.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql9.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql10.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql11.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql12.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql13.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql14.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql15.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql16.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql17.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
+
+COPY houses(house_id,photos,title,"location",is_entire_place,private_room,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities) FROM '/Users/andrewtjandra/Documents/Hack_Reactor/SDC/description/database/DataGenerator/data/houses-nosql18.csv' WITH DELIMITER='|' AND HEADER=TRUE AND CHUNKSIZE=400 AND NUMPROCESSES=12;
