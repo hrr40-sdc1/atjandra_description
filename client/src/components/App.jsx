@@ -70,7 +70,9 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    this.loadHouse(1, (house) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const houseId = urlParams.get('houseId') || 1;
+    this.loadHouse(houseId, (house) => {
       //console.log('house', house);
       this.setState({
         house
