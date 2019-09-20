@@ -5,7 +5,7 @@ const bedSize = require('./bedSize');
 
 const numOfRecords = 1000000;
 
-const generateHouseData = (filepath, length, id = 8000001) => {
+const generateHouseData = (filepath, length, id = 1) => {
   return new Promise((resolve, reject) => {
     const writeStream = fs.createWriteStream(filepath, { encoding: 'utf8' });
     writeStream.write('house_id|photos|title|"location"|is_entire_place|private_room|super_host_name|super_host_photo|rating|"desc"|space_desc|guest_desc|other_desc|amenities\n');
@@ -18,7 +18,7 @@ const generateHouseData = (filepath, length, id = 8000001) => {
         const location = faker.address.city();
         const is_entire_place = faker.random.boolean();
         const super_host_name = `${faker.name.firstName()} ${faker.name.lastName()}`;
-        const super_host_photo = 'super-host-photo-1.jpg';
+        const super_host_photo = `super-host-photo-${faker.random.number({min: 1, max: 325})}.jpg`;
         const rating = faker.random.number(100);
         const desc = faker.lorem.sentences(2);
         const space_desc = faker.lorem.sentences(5);
@@ -99,35 +99,43 @@ const helperObjToString = (obj) => {
   return objString;
 }
 
-generateHouseData('./description/database/DataGenerator/data/houses-nosql17.csv', numOfRecords)
+generateHouseData('./database/DataGenerator/data/houses-nosql1.csv', numOfRecords)
   .then((res) => {
   console.log(res);
-  return generateHouseData('./description/database/DataGenerator/data/houses-nosql18.csv', numOfRecords, res.id)
+  return generateHouseData('./database/DataGenerator/data/houses-nosql2.csv', numOfRecords, res.id)
   })
-  // .then((res) => {
-  // console.log(res);
-  // return generateHouseData('./description/database/DataGenerator/data/houses-nosql15.csv', numOfRecords, res.id)
-  // })
-  // .then((res) => {
-  //   console.log(res);
-  //   return generateHouseData('./description/database/DataGenerator/data/houses-nosql16.csv', numOfRecords, res.id)
-  // })
-  // .then((res) => {
-  //   console.log(res);
-  //   return generateHouseData('./description/database/DataGenerator/data/houses-nosql13.csv', numOfRecords, res.id)
-  // })
-  // .then((res) => {
-  //   console.log(res);
-  //   return generateHouseData('./description/database/DataGenerator/data/houses-nosql14.csv', numOfRecords, res.id)
-  // })
-  // .then((res) => {
-  //   console.log(res);
-  //   return generateHouseData('./description/database/DataGenerator/data/houses-nosql15.csv', numOfRecords, res.id)
-  // })
-  // .then((res) => {
-  //   console.log(res);
-  //   return generateHouseData('./description/database/DataGenerator/data/houses-nosql16.csv', numOfRecords, res.id)
-  // })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql3.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql4.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql5.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql6.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql7.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql8.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql9.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql10.csv', numOfRecords, res.id)
+  })
   .then((res) => {
     console.log(res);
     console.log('Data Generated');
