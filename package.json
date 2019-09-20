@@ -11,6 +11,7 @@
     "start": "node server",
     "start:dev": "nodemon server",
     "db:seed": "node database/seeder.js",
+    "db:seed-c": "node database/DataGenerator/createHouseData-noSql.js",
     "build": "webpack -d",
     "react:dev": "webpack -d --watch",
     "test": "jest --verbose ./spec",
