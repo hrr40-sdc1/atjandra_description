@@ -45,7 +45,7 @@ const SearchResults = ({ houses = [] }) => {
 
   const listHouses = () => {
 
-    let s3 = process.env.S3_HOST || 'https://housemania-hr.s3-us-west-1.amazonaws.com';
+    let s3 = process.env.S3_HOST || 'https://dy6au145h7uxl.cloudfront.net';
 
     // display only 10 at maximum
     let listHouses = houses.slice();
