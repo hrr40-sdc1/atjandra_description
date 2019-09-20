@@ -7,3 +7,5 @@ const pool = new Pool({
   password: process.env.pgPassword,
   port: 5432,
 });
+
+module.exports = pool;
