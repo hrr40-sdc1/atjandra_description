@@ -115,13 +115,13 @@ const Banner = (props) => {
   }
 
   // Amazon S3 is by default. Set to local if in Env settings
-  let s3 = process.env.S3_HOST || 'https://housemania-hr.s3-us-west-1.amazonaws.com';
+  let s3 = process.env.S3_HOST || 'https://dy6au145h7uxl.cloudfront.net';
 
   let photo1 = 'default.jpg';
-  let photo2 = 'default.jpg';
-  let photo3 = 'default.jpg';
-  let photo4 = 'default.jpg';
-  let photo5 = 'default.jpg';
+  let photo2 = 'default2.jpg';
+  let photo3 = 'default3.jpg';
+  let photo4 = 'default4.jpg';
+  let photo5 = 'default5.jpg';
 
   const loadPhotos = () => {
     if (!photos.length) {
@@ -193,32 +193,32 @@ const Banner = (props) => {
     <BannerContainer id="overview-house-banner" >
       <PhotosContainer className="photos-container" >
         <PrimaryPhotoContainer >
-          <PrimaryPhoto src={s3 + '/photos/house/' + photo1} data-id={1}
+          <PrimaryPhoto src={s3 + '/Images/' + photo1} data-id={1}
             onMouseOver={zoomPhoto.bind(this)}
             onMouseOut={unzoomPhoto.bind(this)} ></PrimaryPhoto>
           <PhotoShadow className="photo-shadow" data-id={1} />
         </PrimaryPhotoContainer>
 
         <SecondaryPhotoContainer>
-          <SecondaryPhoto src={s3 + '/photos/house/' + photo2} data-id={2}
+          <SecondaryPhoto src={s3 + '/Images/' + photo2} data-id={2}
             onMouseOver={zoomPhoto.bind(this)}
             onMouseOut={unzoomPhoto.bind(this)} ></SecondaryPhoto>
           <PhotoShadow className="photo-shadow" data-id={2} />
         </SecondaryPhotoContainer>
         <SecondaryPhotoContainer>
-          <SecondaryPhoto src={s3 + '/photos/house/' + photo3} data-id={3}
+          <SecondaryPhoto src={s3 + '/Images/' + photo3} data-id={3}
             onMouseOver={zoomPhoto.bind(this)}
             onMouseOut={unzoomPhoto.bind(this)} ></SecondaryPhoto>
           <PhotoShadow className="photo-shadow" data-id={3} />
         </SecondaryPhotoContainer>
         <SecondaryPhotoContainer>
-          <SecondaryPhoto src={s3 + '/photos/house/' + photo4} data-id={4}
+          <SecondaryPhoto src={s3 + '/Images/' + photo4} data-id={4}
             onMouseOver={zoomPhoto.bind(this)}
             onMouseOut={unzoomPhoto.bind(this)} ></SecondaryPhoto>
           <PhotoShadow className="photo-shadow" data-id={4} />
         </SecondaryPhotoContainer>
         <SecondaryPhotoContainer>
-          <SecondaryPhoto src={s3 + '/photos/house/' + photo5} data-id={5}
+          <SecondaryPhoto src={s3 + '/Images/' + photo5} data-id={5}
             onMouseOver={zoomPhoto.bind(this)}
             onMouseOut={unzoomPhoto.bind(this)} ></SecondaryPhoto>
           <PhotoShadow className="photo-shadow" data-id={5} />
