@@ -26,6 +26,7 @@ dist/
 
 # Environment settings
 .env
+newrelic.js
 
 # Photos in public directory because we won't need them in production
 public/photos
@@ -40,3 +41,5 @@ __snapshots__
 
 # CSV Files from Data Generator
 database/DataGenerator/data
+
+

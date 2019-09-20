@@ -1,5 +1,7 @@
+require('newrelic');
+
 const express = require('express');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 require('dotenv').config();
 var cors = require('./cors');
 
