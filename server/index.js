@@ -5,6 +5,7 @@ var cors = require('./cors');
 
 const House = require('./../database/House.js');
 const Photo = require('./../database/Photo.js');
+const client = require('./../database/cassandra/connection.js');
 
 const app = express();
 
@@ -132,6 +133,24 @@ app.get('/houses/search/:qry', (req, res, next) => {
       res.status(200).json(houses);
     }
   }).limit(10);
+});
+
+// Cassandra API Endpoints
+app.get('/houses/cassandra/:id', (req, res, next) => {
+  var houseId = req.params.id;
+  const query = 'SELECT * FROM houses WHERE house_id = ?';
+
+  client.execute(query, [houseId], { prepare: true })
+    .then(result => res.status(200).json(result.rows))
+    .catch(err => res.status(400).json(err));
+});
+
+app.post('/houses/cassandra', (req, res, next) => {
+  const query = 'INSERT INTO houses(house_id,photos,title,"location",is_entire_place,super_host_name,super_host_photo,rating,"desc",space_desc,guest_desc,other_desc,amenities,private_room) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+
+  client.execute(query, [req.body.house_id, req.body.photos, req.body.title, req.body.location, req.body.is_entire_place, req.body.super_host_name, req.body.super_host_photo, req.body.rating, req.body.desc, req.body.space_desc, req.body.guest_desc, req.body.other_desc, req.body.amenities, req.body.private_room], { prepare: true })
+    .then(result => res.status(201).json({ success: true, message: 'Item Created', id: result.id }))
+    .catch(err => res.status(400).json(err));
 });
 
 const port = process.env.PORT || 3010;

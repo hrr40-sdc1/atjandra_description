@@ -111,7 +111,7 @@ const ReadMore = styled.button`
 const Description = ({ house = {}}) => {
 
   // Amazon S3 is by default. Set to local if in Env settings
-  let s3 = process.env.S3_HOST || 'https://housemania-hr.s3-us-west-1.amazonaws.com';
+  let s3 = process.env.S3_HOST || 'https://dy6au145h7uxl.cloudfront.net';
 
   let room = {
     guest: 0,
@@ -166,7 +166,7 @@ const Description = ({ house = {}}) => {
       </TitleContainer>
 
       <HostContainer className="host-photo">
-        <HostPhoto src={s3 + '/photos/host/' + (house.super_host_photo || '/default.jpg')} />
+        <HostPhoto src={s3 + '/Images/hosts/' + (house.super_host_photo || 'default.jpg')} />
         <div>{house.super_host_name}</div>
         <HostBadge>
           <Badge />

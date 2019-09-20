@@ -75,7 +75,7 @@ class App extends React.Component {
     this.loadHouse(houseId, (house) => {
       //console.log('house', house);
       this.setState({
-        house
+        house: house[0]
       });
     });
 
@@ -96,7 +96,7 @@ class App extends React.Component {
 
     $.ajax({
       method: 'GET',
-      url: host + '/houses/' + id,
+      url: host + '/houses/cassandra/' + id,
       contentType: 'application/json',
       cache: false,
       success: callback,
