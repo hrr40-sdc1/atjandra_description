@@ -1,0 +1,29 @@
+config:
+  target: "http://localhost:3010"
+  processor: "./generatePostData.js"
+  phases:
+    - duration: 60
+      arrivalRate: 20
+scenarios:
+  - name: "POST house data"
+    flow:
+      - loop:
+        - function: "generatePostData"
+        - post:
+            url: "/houses/cassandra/"
+            json:
+              house_id: "{{ house_id }}"
+              photos: "{{ photos }}"
+              title: "{{ title }}"
+              location: "{{ location }}"
+              is_entire_place: "{{ is_entire_place }}"
+              super_host_name: "{{ super_host_name }}"
+              super_host_photo: "{{ super_host_photo }}"
+              rating: "{{ rating }}"
+              desc: "{{ desc }}"
+              space_desc: "{{ space_desc }}"
+              guest_desc: "{{ guest_desc }}"
+              other_desc: "{{ other_desc }}"
+              amenities: "{{ amenities }}"
+              private_room: "{{ private_room }}"
+        count: 60

@@ -1,0 +1,31 @@
+config:
+  target: "http://localhost:3010"
+  processor: "./generateHouseid.js"
+  phases:
+    - duration: 60
+      arrivalRate: 20
+scenarios:
+  - name: "Get house data - first quarter"
+    weight: 10
+    flow:
+      - loop:
+        - function: "generateHouseIdFirstQuarter"
+        - get:
+            url: "/houses/cassandra/{{ houseId }}"
+        count: 60
+  - name: "Get house data - middle"
+    weight: 30
+    flow:
+      - loop:
+        - function: "generateHouseIdMiddle"
+        - get:
+            url: "/houses/cassandra/{{ houseId }}"
+        count: 60
+  - name: "Get house data - last quarter"
+    weight: 60
+    flow:
+      - loop:
+        - function: "generateHouseIdLastQuarter"
+        - get:
+            url: "/houses/cassandra/{{ houseId }}"
+        count: 60
