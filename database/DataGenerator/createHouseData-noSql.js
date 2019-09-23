@@ -3,7 +3,7 @@ const faker = require('faker');
 const amenityList = require('./amenityList');
 const bedSize = require('./bedSize');
 
-const numOfRecords = 1000000;
+const numOfRecords = 500000;
 
 const generateHouseData = (filepath, length, id = 1) => {
   return new Promise((resolve, reject) => {
@@ -135,6 +135,46 @@ generateHouseData('./database/DataGenerator/data/houses-nosql1.csv', numOfRecord
   .then((res) => {
     console.log(res);
     return generateHouseData('./database/DataGenerator/data/houses-nosql10.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql11.csv', numOfRecords, res.id)
+    })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql12.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql13.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql14.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql15.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql16.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql17.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql18.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql19.csv', numOfRecords, res.id)
+  })
+  .then((res) => {
+    console.log(res);
+    return generateHouseData('./database/DataGenerator/data/houses-nosql20.csv', numOfRecords, res.id)
   })
   .then((res) => {
     console.log(res);
