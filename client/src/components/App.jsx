@@ -65,9 +65,8 @@ class App extends React.Component {
     };
 
     // Amazon Server HOST will be by default. Set to local if in Env settings
-    this.host = process.env.HOUSEMANIA_HOST || 'http://housemania-overview.us-west-1.elasticbeanstalk.com';
+    this.host = process.env.HOUSEMANIA_HOST || 'http://ec2-34-219-231-48.us-west-2.compute.amazonaws.com:3010';
   }
-
 
   componentDidMount() {
     const urlParams = new URLSearchParams(window.location.search);
