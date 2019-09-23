@@ -50,7 +50,7 @@ class Search extends React.Component {
     };
 
     // Amazon Server HOST will be by default. Set to local if in Env settings
-    this.host = process.env.HOUSEMANIA_HOST || 'http://housemania-overview.us-west-1.elasticbeanstalk.com';
+    this.host = process.env.HOUSEMANIA_HOST || 'http://ec2-34-219-231-48.us-west-2.compute.amazonaws.com:3010';
   }
 
   loadHouses(qry) {
@@ -72,16 +72,16 @@ class Search extends React.Component {
   searchHouses(qry, callback) {
     var host = this.host;
 
-    $.ajax({
-      method: 'GET',
-      url: host + '/houses/search/' + qry,
-      contentType: 'application/json',
-      cache: false,
-      success: callback,
-      error: (err) => {
-        console.log('error searching for houses', err);
-      }
-    });
+    // $.ajax({
+    //   method: 'GET',
+    //   url: host + '/houses/search/' + qry,
+    //   contentType: 'application/json',
+    //   cache: false,
+    //   success: callback,
+    //   error: (err) => {
+    //     console.log('error searching for houses', err);
+    //   }
+    // });
   }
 
   handleSearch(event) {
