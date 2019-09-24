@@ -63,9 +63,6 @@ class App extends React.Component {
       house: {},
       floatTopBar: false
     };
-
-    // Amazon Server HOST will be by default. Set to local if in Env settings
-    this.host = process.env.HOUSEMANIA_HOST || 'http://ec2-34-219-231-48.us-west-2.compute.amazonaws.com:3010';
   }
 
   componentDidMount() {
@@ -91,11 +88,9 @@ class App extends React.Component {
   }
 
   loadHouse(id, callback) {
-    var host = this.host;
-
     $.ajax({
       method: 'GET',
-      url: host + '/houses/cassandra/' + id,
+      url: '/houses/cassandra/' + id,
       contentType: 'application/json',
       cache: false,
       success: callback,
